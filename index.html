@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador Alura</title>
 </head>
 <body>
     <header>
-        <img src="imagenes/logo.svg" alt="logo-alura">
+        <img src="imagenes/logo.svg" alt="logo-alura" class="logo">
     </header>
     <main>
-        <section>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <div>
-                <p>Solo letras minúsculas y sin acentos</p>
-                <button>Encriptar</button>
-                <button>Desencriptar</button>
+        <section class="conten cifrar" id="cifrar">
+            <textarea name="" id="txt_base" cols="30" rows="10" class="texto base" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="menu_btn">
+                <p class="info"><span class="advertencia">!</span>Solo letras minúsculas y sin acentos</p>
+                <button id="btnCodificar" class="boton codificar">Encriptar</button>
+                <button id="btnDecodificar" class="boton decodificar">Desencriptar</button>
             </div>
         </section>
-        <section>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <button>Copiar</button>
+        <section class="conten descifrar">
+                <textarea name="" id="txt_mensaje" cols="30" rows="10" class="texto mensaje valor"></textarea>
+                <button id="btnCopiar" class="boton copiar">Copiar</button>
         </section>
     </main>
     <footer>
