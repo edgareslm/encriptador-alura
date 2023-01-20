@@ -12,7 +12,7 @@
     </header>
     <main>
         <section class="conten cifrar" id="cifrar">
-            <textarea name="" id="txt_base" cols="30" rows="10" class="texto base" placeholder="Ingrese el texto aqui"></textarea>
+            <textarea name="" id="txt_base" cols="30" rows="10" class="texto base" pattern="[^A-Z]" title="Se aceptan solo letras minusculas" spellcheck="true" placeholder="Ingrese el texto aqui"></textarea>
             <div class="menu_btn">
                 <p class="info"><span class="advertencia">!</span>Solo letras minúsculas y sin acentos</p>
                 <button id="btnCodificar" class="boton codificar">Encriptar</button>
@@ -20,12 +20,11 @@
             </div>
         </section>
         <section class="conten descifrar">
-                <textarea name="" id="txt_mensaje" cols="30" rows="10" class="texto mensaje valor"></textarea>
-                <button id="btnCopiar" class="boton copiar">Copiar</button>
+            <textarea name="" id="txt_mensaje" cols="30" rows="10" class="texto mensaje valor"></textarea>
+            <button id="btnCopiar" class="boton copiar">Copiar</button>
         </section>
     </main>
-    <footer>
-        <p>Edgar Esquivel</p>
-    </footer>
+    <footer><p class="autor">Edgar Esquivel</p></footer>
+    <script src="script.js"></script>
 </body>
 </html>

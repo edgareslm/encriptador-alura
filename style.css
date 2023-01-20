@@ -60,7 +60,7 @@ body {
             .texto{
                 width: 100%;
                 color: var(--text-one);
-                box-shadow: 4px 4px 6px #828282;
+                box-shadow: 4px 4px 6px #0003;
                 resize: none;
                 padding: 10px;
                 position: relative;
