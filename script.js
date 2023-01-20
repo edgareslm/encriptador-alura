@@ -113,4 +113,34 @@ TXT_MENSAJE.placeholder="Ningún mensaje fue encontrado\n\nIngresa el texto que 
         }
 }
 
+// Bloque para validar si se esta introduciendo letras MAYUSCULAS
+
+TXT_BASE.oninput=validarTexto;
+
+function validarTexto(){
+    var texto = TXT_BASE.value;
+    var alerta = document.getElementById("vtnAlerta");
+    const regexp =/[A-Z]/g; // expresion regular indica un rango de letras mayusculas
+    if(regexp.test(texto)){ // testea si existen coencidencias
+        alerta.style.display="block"; // hace visible la ventana de alerta
+    }else{
+        alerta.style.display="none"; // oculta la ventana
+    }
+}
+
+// Bloque para generar la ventana de alerta 
+
+crearAlerta();
+
+function crearAlerta(){
+    var ventanaAlerta = document.createElement("div");
+        ventanaAlerta.id="vtnAlerta";
+        ventanaAlerta.style.display="none";
+        ventanaAlerta.textContent="Solo se admite letras minusculas";
+         
+        const PRINCIPAL = document.getElementById("cifrar");
+        PRINCIPAL.insertBefore(ventanaAlerta,TXT_BASE);
+
+}
+
 }
