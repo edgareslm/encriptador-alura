@@ -128,7 +128,6 @@ function validarTexto(){
     }
 }
 
-// Bloque para generar la ventana de alerta 
 
 crearAlerta();
 
@@ -138,18 +137,52 @@ function crearAlerta(){
 
     var btn_cerrar =document.createElement("button");
         btn_cerrar.textContent="cerrar";
+        btn_cerrar.onclick= () => ventanaAlerta.style.display="none";
+
 
     var btn_minuscula =document.createElement("button");
         btn_minuscula.textContent="minuscula";
+        btn_minuscula.onclick= ()=>{ TXT_BASE.value = TXT_BASE.value.toLowerCase();};
 
     var ventanaAlerta = document.createElement("div");
         ventanaAlerta.id="vtnAlerta";
         ventanaAlerta.appendChild(parrafoMensaje);
         ventanaAlerta.insertAdjacentElement("beforeend", btn_cerrar);
         ventanaAlerta.insertAdjacentElement("beforeend", btn_minuscula);
-            
+        
+        var style_btn = {
+            width:40+"%",
+            color:"#777",
+            fontSize:12+"px",
+            marginLeft:10+"px",
+            fontWeight:"bold"
+        };
+        var style_txt = {
+            width:100+"%",
+            color:"#777",
+            fontSize:12+"px",
+        };
+        var style_vtn = {           
+            "display":"none",
+            "position":"absolute",
+            "top":"30%",
+            "left":"20%",
+            "z-index":"10",
+            "width":"60%",
+            "height":"50px",
+            "border":"2px solid #dfdfdf",
+            "background-color":"#7772",
+            "border-radius":"10px",
+            "text-align":"center",
+            "font-weight":"bold"
+        };
+        
+        Object.assign(btn_cerrar.style, style_btn);
+        Object.assign(btn_minuscula.style, style_btn);
+        Object.assign(parrafoMensaje.style,style_txt);
+        Object.assign(ventanaAlerta.style,style_vtn);
+    
         const PRINCIPAL = document.getElementById("cifrar");
-        ventanaAlerta.style.display="none";
          
         PRINCIPAL.insertBefore(ventanaAlerta,TXT_BASE);
 }
