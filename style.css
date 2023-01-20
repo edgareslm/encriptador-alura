@@ -5,16 +5,18 @@
     border: 0;
     box-sizing: border-box;
 }
+
 :root{
     --bkg-primary: #D7E9B9;
     --bkg-second:#0A3871;
     --bkg-third:#F8FFDB;
     --text-one:  #0A3871;
     --text-two: #D8DFE8;
-    --text-three: #000000;    
+    --text-three: #000000;
     font-family: 'Inter', sans-serif;
     font-size:16px;
 }
+
 body {
     background: var(--bkg-primary,#E5E5E5);
     height: 100vh;
@@ -35,6 +37,7 @@ body {
             width:1.5rem;
             filter:var(--filtro-one);
         }
+
     main{
         flex-grow: 9;
         width: 90%; 
@@ -51,6 +54,7 @@ body {
             flex-direction: column;
             justify-content: space-between;
         }
+
         .cifrar{
             flex-grow: 4;
         }
@@ -60,7 +64,7 @@ body {
             .texto{
                 width: 100%;
                 color: var(--text-one);
-                box-shadow: 4px 4px 6px #0003;
+                box-shadow: 4px 4px 6px #FFF2;
                 resize: none;
                 padding: 10px;
                 position: relative;
@@ -83,6 +87,7 @@ body {
                     color:var(--text-three);
                     background-color: var(--bkg-third);
                     }
+                
                 .valor{
                     background-image: url('imagenes/Muneco.svg'); 
                     background-size:60%;
@@ -135,6 +140,7 @@ body {
                         padding-bottom: 10px;
                         text-align: left;
                     }
+                    
                         .advertencia{
                             background-color:var(--bkg-second);
                             color: var(--text-two);
@@ -142,6 +148,7 @@ body {
                             padding: 2px 8px;
                             font-size: 0.7rem;
                         }
+
                 .copiar{
                     display: none;
                     position:absolute;
