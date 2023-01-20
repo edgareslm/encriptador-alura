@@ -133,14 +133,25 @@ function validarTexto(){
 crearAlerta();
 
 function crearAlerta(){
+    var parrafoMensaje = document.createElement("p");
+        parrafoMensaje.textContent="Solo se admite letras minusculas";
+
+    var btn_cerrar =document.createElement("button");
+        btn_cerrar.textContent="cerrar";
+
+    var btn_minuscula =document.createElement("button");
+        btn_minuscula.textContent="minuscula";
+
     var ventanaAlerta = document.createElement("div");
         ventanaAlerta.id="vtnAlerta";
-        ventanaAlerta.style.display="none";
-        ventanaAlerta.textContent="Solo se admite letras minusculas";
-         
+        ventanaAlerta.appendChild(parrafoMensaje);
+        ventanaAlerta.insertAdjacentElement("beforeend", btn_cerrar);
+        ventanaAlerta.insertAdjacentElement("beforeend", btn_minuscula);
+            
         const PRINCIPAL = document.getElementById("cifrar");
+        ventanaAlerta.style.display="none";
+         
         PRINCIPAL.insertBefore(ventanaAlerta,TXT_BASE);
-
 }
 
 }
