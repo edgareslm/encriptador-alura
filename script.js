@@ -17,7 +17,7 @@ BTN_CODIFICAR.onclick=cifrarTexto;
               case "a": return 'ai';
               case "e": return 'enter';
               case "i": return 'imes';
-              case "o": return 'over';
+              case "o": return 'ober';
               case "u": return 'ufat';
           }
       }
@@ -32,7 +32,7 @@ const BTN_DESCIFRAR = document.getElementById("btnDecodificar");
 function descifrarTexto(){
 let datosBase = TXT_BASE.value;
 
-let datosModificados = datosBase.replaceAll(/ai|enter|imes|over|ufat/g, palabrasClave);
+let datosModificados = datosBase.replaceAll(/ai|enter|imes|ober|ufat/g, palabrasClave);
 
 function palabrasClave(palabra){
   if(palabra == "ai"){
@@ -44,7 +44,7 @@ function palabrasClave(palabra){
   if(palabra == "imes"){
       return "i";
   }        
-  if(palabra == "over"){
+  if(palabra == "ober"){
       return "o";
   }       
   if(palabra == "ufat"){
@@ -56,3 +56,13 @@ TXT_MENSAJE.value=datosModificados;
 
 }
 
+// Bloque para copiar texto
+
+const BNT_COPIAR = document.getElementById("btnCopiar");
+BNT_COPIAR.onclick=copiarTexto;
+
+function copiarTexto(){
+var portaPapeles = TXT_MENSAJE.value;
+console.log(portaPapeles);
+navigator.clipboard.writeText(portaPapeles); // me genera un error
+}
