@@ -85,4 +85,32 @@ TXT_MENSAJE.placeholder="Ningún mensaje fue encontrado\n\nIngresa el texto que 
         }
     }
 
+// bloque para aplicar tema oscuro 
+
+    const BTN_TEMA = document.getElementById("btn_tema"); 
+    const ROOT = document.documentElement; // elemento raiz (root) html 
+
+    BTN_TEMA.onclick=activarTema;
+
+    function activarTema (){
+        ROOT.classList.toggle("dark-theme");
+        var tema = BTN_TEMA.checked ? "dark" : "light";
+        localStorage.setItem("theme",tema);  // se crea una variable temporal local y se asigna un valor
+    }
+
+// bloque para comprobar si el tema esta activo
+
+    validarTema();
+
+    function validarTema (){
+    var TEMA_ACTUAL = localStorage.getItem("theme"); // obtiene lel valor para comprobar si activar el tema oscuro
+        if(TEMA_ACTUAL == "dark"){
+            BTN_TEMA.checked=true;
+            ROOT.classList.add("dark-theme");
+        }else{
+            BTN_TEMA.checked=false;
+            ROOT.classList.remove("dark-theme");
+        }
+}
+
 }
