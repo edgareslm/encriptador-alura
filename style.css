@@ -15,8 +15,17 @@
     --text-three: #000000;
     font-family: 'Inter', sans-serif;
     font-size:16px;
+    --filter-one: none;
 }
-
+    :root.dark-theme{
+        --bkg-primary:#28475C;
+        --bkg-second:#e5e5e5;
+        --bkg-third:#D7E9B9;
+        --text-one:  #d8dfe8;
+        --text-two: #0a3871 ;
+        --text-three:#000000;
+        --filtro-one: hue-rotate(-2.5turn) saturate(3) brightness(6) grayscale(1);
+    }
 body {
     background: var(--bkg-primary,#E5E5E5);
     height: 100vh;
@@ -37,6 +46,52 @@ body {
             width:1.5rem;
             filter:var(--filtro-one);
         }
+        
+    /* A partado diseño checkbox button */
+
+    .conten_tema{
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 10px;
+        font-size: .7rem;
+        font-weight: bold;
+        color:var(--text-one);
+    }
+        #btn_tema{
+            appearance: none;
+            display: block;
+        }
+        .check_tema{
+            display: inline-block;
+            position: relative;
+            left: 0;
+            width:45px;
+            height: 25px;
+            padding: 1px;
+            border-radius: 20px;
+            background: var(--bkg-third,#fff);
+            border:2px solid #bdb3b3;
+            vertical-align: middle;
+        }
+            .control{
+                display: inline-block;
+                position: relative;
+                width: 18px;
+                height: 18px;
+                border-radius: 9px;
+                border:none;
+                background: var(--bkg-primary);
+                box-shadow: 0 2px 4px #555;
+                outline: none;
+            }
+
+            #btn_tema:checked + .conten_tema > .check_tema {
+                background: var(--bkg-second);
+             }
+             
+                #btn_tema:checked + .conten_tema > .check_tema  .control {
+                    left:22px;
+                } 
 
     main{
         flex-grow: 9;
@@ -227,6 +282,7 @@ body {
                         bottom: 20px;
                     }
 }
+
 @media screen and (max-width:480px) {
     .menu_btn{
         flex-direction: column;

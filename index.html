@@ -6,13 +6,22 @@
     <link rel="stylesheet" href="style.css">
     <title>Encriptador Alura</title>
 </head>
-<body>
+<body class="dark-theme">
     <header>
-        <img src="imagenes/logo.svg" alt="logo-alura" class="logo">
+        <img src="imagenes/logo.svg" alt="logo tipo alura" class="logo">
+        <div class="select_tema">
+            <input type="checkbox" name="" id="btn_tema">
+            <label for="btn_tema" class="conten_tema label_boton">
+                <p class="check_tema">
+                    <i class="control"></i>
+                </p>
+            </label>
+            <label for="btn_tema" class="conten_tema label_texto">Tema-oscuro</label>
+        </div>
     </header>
     <main>
         <section class="conten cifrar" id="cifrar">
-            <textarea name="" id="txt_base" cols="30" rows="10" class="texto base" pattern="[^A-Z]" title="Se aceptan solo letras minusculas" spellcheck="true" placeholder="Ingrese el texto aqui"></textarea>
+            <textarea name="" id="txt_base" cols="30" rows="10" class="texto base" placeholder="Ingrese el texto aqui"></textarea>
             <div class="menu_btn">
                 <p class="info"><span class="advertencia">!</span>Solo letras minúsculas y sin acentos</p>
                 <button id="btnCodificar" class="boton codificar">Encriptar</button>
