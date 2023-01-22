@@ -21,7 +21,7 @@ TXT_MENSAJE.placeholder="Ningún mensaje fue encontrado\n\nIngresa el texto que 
                 case "a": return 'ai';
                 case "e": return 'enter';
                 case "i": return 'imes';
-                case "o": return 'over';
+                case "o": return 'ober';
                 case "u": return 'ufat';
             }
         }
@@ -36,7 +36,7 @@ TXT_MENSAJE.placeholder="Ningún mensaje fue encontrado\n\nIngresa el texto que 
 
     function descifrarTexto(){
         let datosBase = TXT_BASE.value;
-        let datosModificados = datosBase.replaceAll(/ai|enter|imes|over|ufat/g, palabrasClave);
+        let datosModificados = datosBase.replaceAll(/ai|enter|imes|ober|ufat/g, palabrasClave);
 
         function palabrasClave(palabra){
             if(palabra == "ai"){
@@ -48,7 +48,7 @@ TXT_MENSAJE.placeholder="Ningún mensaje fue encontrado\n\nIngresa el texto que 
             if(palabra == "imes"){
                 return "i";
             }        
-            if(palabra == "over"){
+            if(palabra == "ober"){
                 return "o";
             }       
             if(palabra == "ufat"){
